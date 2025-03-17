@@ -1,0 +1,116 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-align: center;
+  border-radius: var(--border-radius-md);
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-md);
+  cursor: pointer;
+  transition: background-color var(--transition-normal);
+  gap: 0.5rem;
+  min-width: 4rem;
+  line-height: 1.2;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Основные стили кнопки */
+.button-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.button-primary:hover,
+.button-primary:focus {
+  background-color: var(--primary-hover);
+  /* Убираем transform */
+  box-shadow: var(--shadow-md);
+}
+
+.button-primary:active {
+  /* Убираем transform */
+  opacity: 0.9;
+}
+
+/* Второстепенная кнопка */
+.button-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.button-secondary:hover,
+.button-secondary:focus {
+  background-color: var(--secondary-hover);
+  /* Убираем transform */
+  box-shadow: var(--shadow-md);
+}
+
+.button-secondary:active {
+  /* Убираем transform */
+  opacity: 0.9;
+}
+
+/* Кнопка для опасных действий */
+.button-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.button-danger:hover,
+.button-danger:focus {
+  background-color: var(--danger-hover);
+  /* Убираем transform */
+  box-shadow: var(--shadow-md);
+}
+
+.button-danger:active {
+  /* Убираем transform */
+  opacity: 0.9;
+}
+
+/* Кнопка с контуром */
+.button-outline {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.button-outline:hover,
+.button-outline:focus {
+  background-color: rgba(24, 119, 242, 0.1);
+  /* Убираем transform */
+}
+
+/* Отключенное состояние кнопки */
+.button:disabled,
+.button[disabled] {
+  background-color: var(--bg-tertiary);
+  color: var(--text-light);
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.7;
+}
+
+/* Размеры кнопок */
+.button-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: var(--font-size-sm);
+}
+
+.button-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: var(--font-size-lg);
+}
+
+/* Полная ширина на мобильных устройствах */
+@media screen and (max-width: 480px) {
+  .button-full-mobile {
+    width: 100%;
+  }
+
+  .button {
+    min-height: 2.5rem;
+  }
+}

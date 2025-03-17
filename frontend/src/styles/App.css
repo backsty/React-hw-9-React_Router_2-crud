@@ -1,0 +1,65 @@
+@import './reset.css';
+@import './variables.css';
+@import './animations.css';
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  width: 100%;
+  color: var(--text-secondary);
+}
+
+.loader::after {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 3px solid var(--bg-tertiary);
+  border-top-color: var(--primary-color);
+  animation: spin 1s linear infinite;
+  margin-left: 0.5rem;
+}
+
+.content-container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  text-align: center;
+  color: var(--text-secondary);
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl);
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  margin: var(--spacing-xl) auto;
+  max-width: 500px;
+}
+
+/* Адаптивные стили для маленьких экранов */
+@media screen and (max-width: 480px) {
+  .content-container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  html {
+    font-size: 14px;
+  }
+}

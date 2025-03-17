@@ -1,0 +1,204 @@
+.post-card {
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-medium);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+@keyframes card-appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.post-card:hover {
+  box-shadow: var(--box-shadow-large);
+}
+
+.post-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.post-user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.post-avatar img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-color-light);
+  transition: transform 0.2s ease;
+}
+
+.post-avatar img:hover {
+  transform: scale(1.05);
+}
+
+.post-user-details h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.post-role {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.admin-icon {
+  width: 0.9rem;
+  height: 0.9rem;
+  object-fit: contain;
+}
+
+.expand-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.expand-button:hover .expand-icon {
+  transform: rotate(180deg);
+}
+
+.post-content {
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.post-content:hover {
+  background-color: var(--bg-hover);
+}
+
+.post-content p {
+  margin: 0;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.post-actions {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  background-color: transparent;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.action-button:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.action-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  object-fit: contain;
+}
+
+/* Плавный рендеринг при появлении карточки */
+.post-card {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Эффект нажатия на кнопку */
+.action-button:active {
+  transform: scale(0.98);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .post-card {
+    border-radius: var(--border-radius-md);
+  }
+
+  .post-content {
+    padding: 1rem;
+  }
+
+  .post-avatar img {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .post-card-header {
+    flex-direction: column;
+  }
+
+  .expand-button {
+    align-self: flex-end;
+    margin-top: -2rem;
+  }
+
+  .post-actions {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .action-button {
+    flex: 1;
+    justify-content: center;
+    padding: 0.5rem;
+  }
+
+  .post-meta {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}

@@ -1,0 +1,150 @@
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: transparent;
+  color: var(--text-color);
+  transition: all var(--transition-normal);
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.icon-button:hover,
+.icon-button:focus {
+  background-color: var(--bg-tertiary);
+}
+
+.icon-button:active {
+  opacity: 0.9;
+}
+
+.icon-button svg,
+.icon-button img {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: transform var(--transition-fast);
+}
+
+/* Вариации размеров */
+.icon-button-sm {
+  width: 2rem;
+  height: 2rem;
+}
+
+.icon-button-sm svg,
+.icon-button-sm img {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.icon-button-lg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.icon-button-lg svg,
+.icon-button-lg img {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+/* Вариации цветов */
+.icon-button-primary {
+  color: var(--primary-color);
+}
+
+.icon-button-primary:hover,
+.icon-button-primary:focus {
+  background-color: rgba(24, 119, 242, 0.1);
+}
+
+.icon-button-secondary {
+  color: var(--secondary-color);
+}
+
+.icon-button-secondary:hover,
+.icon-button-secondary:focus {
+  background-color: rgba(66, 183, 42, 0.1);
+}
+
+.icon-button-danger {
+  color: var(--danger-color);
+}
+
+.icon-button-danger:hover,
+.icon-button-danger:focus {
+  background-color: rgba(255, 59, 48, 0.1);
+}
+
+/* Эффект пульсации при нажатии */
+.icon-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.icon-button:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+/* Отключенное состояние */
+.icon-button:disabled,
+.icon-button[disabled] {
+  color: var(--text-light);
+  cursor: not-allowed;
+}
+
+.icon-button:disabled:hover,
+.icon-button[disabled]:hover {
+  background-color: transparent;
+  transform: none;
+}
+
+/* Анимация вращения для определенных иконок */
+.icon-button.rotate-on-hover:hover svg,
+.icon-button.rotate-on-hover:hover img {
+  transform: rotate(180deg);
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+  .icon-button {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .icon-button svg,
+  .icon-button img {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+}

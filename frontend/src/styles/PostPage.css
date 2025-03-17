@@ -1,0 +1,202 @@
+.post-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 70vh;
+  width: 100%;
+}
+
+.post-details-card {
+  width: 100%;
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-medium);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.post-details-card:hover {
+  box-shadow: var(--box-shadow-large);
+}
+
+.post-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.post-user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.post-avatar img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-color-light);
+  transition: transform 0.2s ease;
+}
+
+.post-avatar img:hover {
+  transform: scale(1.05);
+}
+
+.post-user-details h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.post-role {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.admin-icon {
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+}
+
+.expand-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
+
+.post-details-content {
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.post-details-content p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.post-details-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.edit-button,
+.delete-button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.edit-button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: var(--primary-hover);
+  box-shadow: var(--box-shadow-md);
+}
+
+.delete-button {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: var(--danger-hover);
+  box-shadow: var(--box-shadow-md);
+}
+
+.edit-button:active,
+.delete-button:active {
+  transform: scale(0.98);
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+  width: 100%;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.error-container {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-medium);
+  max-width: 90%;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .post-details-card {
+    border-radius: var(--border-radius-md);
+  }
+
+  .post-details-content {
+    padding: 1.25rem;
+    font-size: 1rem;
+  }
+
+  .post-avatar img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .post-user-details h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .post-details-header {
+    flex-direction: column;
+  }
+
+  .expand-button {
+    align-self: flex-end;
+    margin-top: -2rem;
+  }
+
+  .post-details-actions {
+    flex-direction: column;
+  }
+
+  .edit-button,
+  .delete-button {
+    width: 100%;
+  }
+
+  .post-meta {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}

@@ -1,0 +1,103 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-md) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-normal);
+}
+
+.app-header:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.header-title {
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+  color: white;
+  transition: transform var(--transition-fast);
+}
+
+.header-title:hover {
+  transform: scale(1.05);
+}
+
+.header-nav {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.nav-link {
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.app-content {
+  flex: 1;
+  padding: var(--spacing-xl) 0;
+  background-color: var(--bg-secondary);
+}
+
+.app-footer {
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  padding: var(--spacing-md) 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Адаптивные стили */
+@media screen and (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+  }
+
+  .header-nav {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav-link {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-sm);
+  }
+
+  .app-content {
+    padding: var(--spacing-md) 0;
+  }
+}
