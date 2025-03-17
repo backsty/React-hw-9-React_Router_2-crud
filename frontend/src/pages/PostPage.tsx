@@ -10,7 +10,7 @@ import IconButton from '../components/UI/IconButton';
 import { getPost, updatePost, deletePost } from '../api/postApi';
 import AdminIcon from '../assets/img/admin-with-cogwheels-svgrepo-com.svg';
 import ExpandLessIcon from '../assets/img/expand-less_119177.svg';
-import UserAvatar from '../assets/img/avatar.png'; // Используем локальную аватарку
+import UserAvatar from '../assets/img/avatar.png';
 import '../styles/PostPage.css';
 
 const PostPage: React.FC = () => {

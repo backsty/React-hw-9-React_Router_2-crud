@@ -3,17 +3,15 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import './styles/App.css';
 
-// Используем ленивую загрузку компонентов для улучшения производительности
 const HomePage = lazy(() => import('./pages/HomePage'));
 const NewPostPage = lazy(() => import('./pages/NewPostPage'));
 const PostPage = lazy(() => import('./pages/PostPage'));
 
-// Настраиваем React Query для оптимальной производительности
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       staleTime: 60 * 1000, // 1 минута
-      gcTime: 5 * 60 * 1000, // 5 минут (заменяет устаревшее свойство cacheTime)
+      gcTime: 5 * 60 * 1000, // 5 минут
       refetchOnWindowFocus: false,
       retry: 1,
     },
@@ -35,7 +33,6 @@ const App: React.FC = () => {
           </Suspense>
         </div>
       </BrowserRouter>
-      {/* ReactQueryDevtools удалено, так как модуль не найден */}
     </QueryClientProvider>
   );
 };
